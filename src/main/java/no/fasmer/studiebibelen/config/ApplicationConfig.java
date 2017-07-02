@@ -3,11 +3,7 @@ package no.fasmer.studiebibelen.config;
 import java.util.Set;
 import javax.ws.rs.core.Application;
 
-/**
- *
- * @author erlend
- */
-@javax.ws.rs.ApplicationPath("webresources")
+@javax.ws.rs.ApplicationPath("rest")
 public class ApplicationConfig extends Application {
 
     @Override

@@ -16,16 +16,22 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import no.fasmer.studiebibelen.model.Kapittel;
 import org.bson.Document;
+import org.jboss.logging.Logger;
 
 @Path("kapittel")
 public class KapittelResource {
 
     @Inject
     private MongoClient mongoClient;
+    
+    @Inject
+    private Logger logger;
 
     @GET
     @Path("{bok}")
     public List<Kapittel> getKapitler(@PathParam("bok") String bok) {
+        logger.info("GET kapittel/" + bok);
+        
         final ObjectMapper objectMapper = new ObjectMapper();
         
         final MongoDatabase db = mongoClient.getDatabase("studiebibelen");
