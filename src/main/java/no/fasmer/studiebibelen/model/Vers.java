@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 public class Vers implements Serializable {
     
-    private int vers;
+    private String vers;
     private String tekst;
 
-    public int getVers() {
+    public String getVers() {
         return vers;
     }
 
-    public void setVers(int vers) {
+    public void setVers(String vers) {
         this.vers = vers;
     }
 
