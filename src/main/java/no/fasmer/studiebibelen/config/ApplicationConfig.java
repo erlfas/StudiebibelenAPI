@@ -20,6 +20,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(no.fasmer.studiebibelen.config.CORSFilter.class);
         resources.add(no.fasmer.studiebibelen.rest.KapittelMapResource.class);
         resources.add(no.fasmer.studiebibelen.rest.KapittelResource.class);
     }
