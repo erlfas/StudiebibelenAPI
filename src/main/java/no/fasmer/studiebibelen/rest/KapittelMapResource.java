@@ -10,11 +10,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
 import no.fasmer.studiebibelen.model.KapittelMap;
 import org.bson.Document;
@@ -38,6 +36,8 @@ public class KapittelMapResource {
     @Path("alle")
     @Produces(MediaType.APPLICATION_JSON)
     public List<KapittelMap> getAlleKapittelMaps() {
+        logger.info("/Studiebibelen/rest/kapittelmap/alle");
+        
         final MongoDatabase db = mongoClient.getDatabase("studiebibelen");
         final MongoCollection<Document> documents = db.getCollection("kapittelmap");
 
